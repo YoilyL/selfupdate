@@ -42,7 +42,7 @@ def __get_calling_file(verbose=False):
 	this_file = stack[0][1]
 	for i in range(1, len(stack)):
 		if stack[i][1] != this_file:
-			complete_path = os.path.normpath(os.getcwd() + "/" + stack[i][1])
+			complete_path = os.path.normpath("/" + stack[i][1]) #os.getcwd() +
 			__print(verbose, "Module was called from: {}".format(complete_path))
 			return os.path.split(complete_path)
 
